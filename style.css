@@ -1,0 +1,204 @@
+/*
+Theme Name: Webmasterblog
+Author: Damien Boutonnet
+Author URI: http://31-place-web.net/
+Description: Ceci est un theme réalisé dans le cadre d'une formation
+Text Domain: webmasterblog
+*/
+@font-face {
+    font-family: 'rubik';
+    src: url('fonts/rubik-regular-webfont.woff2') format('woff2'),
+         url('fonts/rubik-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'eudoxus';
+    src: url('fonts/EudoxusSans-Regular.woff') format('woff2'),
+         url('fonts/EudoxusSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'eudoxusBold';
+    src: url('fonts/EudoxusSans-Bold.woff') format('woff2'),
+         url('fonts/EudoxusSans-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/******************************
+GLOBAL
+******************************/
+
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    --primary-color:rgb(74, 108, 247);
+    --secondary-color:rgb(121, 128, 138);
+    --background-color:rgb(17, 23, 34);
+}
+body{
+    font-family: 'rubik', sans-serif;
+    font-size: 1.8rem;
+    line-height: 3rem;
+
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+    height: auto;
+}
+iframe{
+    display: block;
+    max-width: 100%;
+}
+nav ul, .social-nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: all .3s ease;
+}
+body a:hover{
+    color: var(--secondary-color);
+}
+
+/******************************
+STRUCTURE
+******************************/
+
+.container{
+    min-height: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+/******************************
+TYPO
+******************************/
+h1,h2,h3,h4,h5,h6{
+    font-family: 'eudoxus';
+    font-weight: 700;
+}
+
+/******************************
+ENTETE SITE
+******************************/
+
+.site-header>.container{
+    align-items: center;
+}
+/* .site-title,.nav,.footer1,.footer2,.aside1,.aside2{
+border: 1px solid black;
+min-height: 25px;
+} */
+.site-header a{
+   
+    font-family: 'eudoxus';
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 2.2rem;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+    
+}
+.site-title{
+    width: 25%;
+}
+.site-title a{
+    font-family: 'eudoxusBold';
+    font-size: 1.75rem;
+    /* text-shadow: 0 0 .05rem #000;
+    letter-spacing: .1rem; */
+    letter-spacing: 1.5px;
+}
+.home .site-title a{
+    color: var(--secondary-color);
+}
+.nav{
+    width:70%;
+}
+.main-nav{
+    padding: 24px 0;
+}
+.main-nav ul{
+    display: flex;
+    justify-content: flex-end;
+}
+.main-nav a{
+    padding-left: 4.8rem;
+    
+
+}
+
+.current-menu-item a{
+    color: var(--secondary-color);
+}
+
+
+/******************************
+ASIDE
+******************************/
+.aside1, .aside2{
+    width: 48%;
+}
+
+/******************************
+CONTENU
+******************************/
+.main-title{
+    text-align: center;
+    background-color: var(--background-color);
+    color: #fff;
+    padding: 7.5rem 3rem;
+    line-height: 2.2rem;
+}
+.main-title h1{
+    font-family: 'eudoxusBold';
+    font-size: 4.4rem;
+    line-height: 150%;
+    margin-bottom: 0;
+  
+}
+
+/******************************
+ARCHIVE
+******************************/
+.archive-item{
+    border: 1px solid blue;
+    width: 30%;
+}
+
+/******************************
+PIED
+******************************/
+.site-footer{
+    background-color: var(--background-color);
+    color: #fff;
+}
+.footer1,.footer2{
+    width: 48%;
+}
+.footer-nav ul, .social-nav ul {
+    display: flex;
+}
+.footer-nav li{
+    margin-right: 2rem;
+}
+.social-nav li{
+    margin-left: 2rem;
+}
