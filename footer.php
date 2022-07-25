@@ -3,16 +3,14 @@
         <div class="container flex">
             <div class="footer1">
                 <small>
-                    &copy; <?php the_time('Y') ?> 
+                    &copy; <?php the_time('Y') ?>
                     <a href="<?php bloginfo('url') ?>">
                         <?php bloginfo('name') ?>
-                    </a> - WordPress <?php bloginfo('version') ?> par Damien B - 
-                    <a href="mailto:<?php bloginfo('admin_email') ?>">
-                        <?php bloginfo('admin_email') ?>
-                    </a>
+                    </a> <span> | WordPress <?php bloginfo('version') ?></span>
+                   
                 </small>
             </div>
-            <div class="footer2 flex">
+            <div class="footer2">
 
             <?php 
             

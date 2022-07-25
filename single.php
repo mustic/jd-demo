@@ -1,6 +1,6 @@
 <?php get_header()  ?>
     <main>
-        <article class="entry-content">
+        <article>
             <header class="main-title">
                 <div class="container">
                     <p><?php the_category(' / ') ?></p>
@@ -11,7 +11,7 @@
                 <div class="container">
                     <time><?php the_time('j F Y') ?></time>
 
-                    <?php while (have_posts()) : the_post(); ?>
+                    <?php while (have_posts()) : the_post() ?>
                         <p><?php the_author() ?></p>
                     <?php endwhile; ?>
 
@@ -21,10 +21,8 @@
 
             </header>
 
-            <div class="container">
-               <?php 
-               the_post_thumbnail('full');
-               the_content() ?>
+            <div class="container entry-content">
+               <?php the_content() ?>
             </div>
 
         </article>

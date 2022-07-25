@@ -28,7 +28,18 @@ function webmasterblog_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size('archive',400,250,true);
+	add_image_size('archive',408,265,true);
+
+	add_image_size('creation',400,300,true);
+
+	/**
+    * Filter the except length to 20 words.
+    *
+ 	*/
+	function wpdocs_custom_excerpt_length( $length ) {
+    return 20;
+	}
+	add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 	// This theme uses wp_nav_menu() in 3 locations.
 	register_nav_menus(
