@@ -2,12 +2,23 @@
     <main>
         <section>
             <header class="main-title">
-                <h1 class="container">Recherche : <?php echo get_search_query()  ?></h1>
+                <h1 class="container">Vous avez recherché : <em><?php echo get_search_query()  ?></em></h1>
             </header>
 
             <div class="container entry-content">
 
-            <p><strong>Il y a <?php echo count($posts); ?> résultats pour cette recherche</strong></p>
+            <?php if(count($posts)>1){
+                $lettre="s";
+            }else{
+                $lettre="";
+            }
+            ?>
+            <p><strong>Il y a <?php echo count($posts); ?> résultat<?php echo $lettre ?> pour cette recherche</strong></p>
+
+
+
+
+
 
                 <?php 
                 // Si il y a au moins 1 résultat

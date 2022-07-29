@@ -97,6 +97,9 @@ h1,h2,h3,h4,h5,h6{
     font-family: 'eudoxus';
     font-weight: 700;
 }
+.wp-block-button__link{
+    background-color: red;
+}
 
 /******************************
 ENTETE SITE
@@ -143,11 +146,12 @@ min-height: 25px;
 }
 .main-nav a{
     padding-left: 4.8rem;
-    
-
 }
 .current-menu-item a{
     color: var(--secondary-color) !important;
+}
+.nav-mobile{
+    display: none;
 }
 
 
@@ -205,22 +209,42 @@ CONTENU
 }
 
 /******************************
-ARCHIVE
+ARCHIVE / CREATION
 ******************************/
 .archive-item, .creation-item{
     width: 31.5%;
     margin-bottom: 4rem;
     position: relative;
 }
-.archive-item img{
+.archive-item img, .creation-item img{
     border-radius: .25rem;
 }
-.archive-item h2{
+.archive-item h2,  .creation-item h2{
     margin: 0;
+}
+.creation-item h2{
+    position:absolute;
+    left: 0;
+    right: 2rem;
+    bottom: 2rem;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    line-height: 0;
 }
 .archive-item h2 a{
     font-family: 'eudoxus';
     font-size: 2.25rem;
+}
+.creation-item h2 a{
+    display: inline-block;
+    font-family: 'eudoxus';
+    font-size: 1.8rem;
+    padding: .5rem;
+    color: var(--primary-color);
+    line-height: 100%;
+    background-color:#fff;
+    border-radius: .25rem;
 }
 .archive-meta{
     color: var(--secondary-color);
@@ -235,25 +259,22 @@ ARCHIVE
 .archive-meta svg{
     margin-right: .4rem;
 }
-
-/******************************
-CREATIONS
-******************************/
-
-.creation-item h2{
-    position:absolute;
-    right: 1rem;
-    bottom: 1rem;
-    margin: 0;
-}
-
 /******************************
 404
 ******************************/
 .error404 .entry-content{
     text-align: center;
-
 }
+
+/******************************
+WEBMASTER
+******************************/
+.webmaster>div:last-child{
+    border: 1px solid red;
+    width: 80%;
+}
+
+
 /******************************
 RECHERCHE
 ******************************/
@@ -315,4 +336,35 @@ PIED
 }
 .social-nav a{
     font-size: 125%;
+}
+
+/******************************
+FORMAT MOBILE
+******************************/
+
+@media screen and (max-width:750px){
+    .mobile-btn{
+        cursor: pointer;
+    }
+    .nav-mobile{
+        display: block;
+    }
+    .mobile-content{
+        display: none;
+    }
+    .mobile-content.visible{
+        display: block;
+    }
+    .nav{
+        display: none;
+    }
+    .aside1,.aside2,.footer1,.footer2{
+        width: 100%;
+    }
+    .archive-item{
+        width: 48%;
+    }
+    .container{
+        padding: 0 1rem;
+    }
 }

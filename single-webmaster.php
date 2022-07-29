@@ -2,26 +2,36 @@
     <main>
         <article>
             <header class="main-title">
-                <div class="container">
-                    <p><?php the_category(' / ') ?></p>
-                </div>
+            
                 <h1 class="container">
                     <?php the_title() ?>
                 </h1>
-                <div class="container">
-                    <time><?php the_time('j F Y') ?></time>
-
-                    <?php while (have_posts()) : the_post() ?>
-                        <p><?php the_author() ?></p>
-                    <?php endwhile; ?>
-
-                    <?php the_tags('<p><i class="fa-solid fa-tags"></i> ', ' - ', '</p>') ?>
-
-                </div>
-
+            
             </header>
 
             <div class="container entry-content">
+                
+            <div class="flex webmaster">
+                <div><?php the_post_thumbnail('thumbnail') ?></div>
+                <div>
+
+                    <h2>Formation suivie</h2>
+
+                    <?php if( get_field('intitule') ): ?>
+                      <p>Intitulé : <?php the_field('intitule') ?></p>
+                    <?php endif; ?>
+
+                    <?php if( get_field('date') ): ?>
+                      <p>Date : <time><?php the_field('date') ?></time></p>
+                    <?php endif; ?>
+
+                    <?php if( get_field('avis') ): ?>
+                      <p>Avis : <em><?php the_field('avis') ?></em></p>
+                    <?php endif; ?>
+            
+                </div>
+            </div>
+
                <?php the_content() ?>
             </div>
 
@@ -39,6 +49,7 @@
        
         </section>
 
+        
            
         
 

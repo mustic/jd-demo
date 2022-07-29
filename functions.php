@@ -121,8 +121,28 @@ function webmasterblog_scripts() {
 	// wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,500,700%7COpen+Sans' );
 
     /* JAVASCRIPT */
-    // wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js','','1.0',true );
+    wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js','','1.0',true );
 
 }
 add_action( 'wp_enqueue_scripts', 'webmasterblog_scripts' );
+
+
+/* CUSTOM POST TYPE : WEBMASTER */
+function webmasterblog_register_post_types() {
+	$labels = array( // Informations visibles dans le back office
+		'name' => 'Webmaster',
+		'all_items' => 'Tous les webmasters'
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true, // pourra être affiché
+		'show_in_rest' => true,
+		'has_archive' => true, // Fonctionne comme un article, peut être groupé
+		'supports' => array( 'title', 'editor','thumbnail', 'excerpt' ), // Champs
+		'menu_position' => 5,
+		'menu_icon' => 'dashicons-admin-users' // voir la doc dashicons
+   );
+   register_post_type( 'webmaster', $args );
+   }
+   add_action( 'init', 'webmasterblog_register_post_types' );
 

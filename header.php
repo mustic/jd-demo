@@ -24,5 +24,20 @@
             <div class="nav"> 
                 <?php wp_nav_menu(array('theme_location'=>'principal','container'=>'nav', 'container_class'=>'main-nav'))  ?>
             </div>
+
+            <div class="nav-mobile">
+
+                <button class="mobile-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="mobile-content">
+                    <?php wp_nav_menu(array('theme_location'=>'principal','container'=>'nav'))  ?>
+                </div>
+
+            </div>
+
+
+
+
         </div>
     </header>
